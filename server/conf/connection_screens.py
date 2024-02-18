@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+import random
+
 """
 Connection screen
 
@@ -38,3 +40,60 @@ CONNECTION_SCREEN = """
 |b==============================================================|n""".format(
     settings.SERVERNAME, utils.get_evennia_version("short")
 )
+
+def connection_screen():
+    quotes = [
+        """
+        \"The water, like our souls, is spent.\"
+                                - Brother Gilak
+        """,
+        """
+        "We have little room for error. Even the slightest 
+        mistake could lead to thermonuclear winter."
+                                                 - Cogworth
+        """,
+        """
+        "They who run on two legs shall outrun they who run on one.
+        They who run on four legs shall outrun those on two.
+        They who have nitro boosted treads outrun all."
+                                                  - Tanker Timm
+        """,
+        """
+        "Foolishly, I have pursued vengeance when I should have sought
+        death."
+                                                             - Nergull    
+        """,
+        """
+        "Blue skies have turned black, the rivers red. The earth is 
+        dust and the air is poison. Hope hangs ever so loosely."
+                                                      - Vizier Rabin
+"""
+    ]
+
+
+    screen = """    
+
+
+              _.-^^---....,,--       
+          _--                  --_  
+          <                        >)
+          |                         | 
+          \._                   _./  
+              ```--. . , ; .--'''       
+                    | |   |             
+                .-=||  | |=-.   
+                `-=#$%&%$#=-'   
+                    | ;  :|     
+          _____.,-#%&$@%#&#~,._____
+        ###############################
+        #   RETRO MUTANT APOCALYPSE   #
+        ###############################
+
+{}
+
+        Connect to an existing: 
+          |wconnect <username> <password>|n
+        Create a new account:
+          |wcreate <username> <password>|n
+""".format(random.choice(quotes))
+    return screen
