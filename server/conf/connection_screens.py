@@ -43,33 +43,65 @@ CONNECTION_SCREEN = """
 
 def connection_screen():
     quotes = [
-        """
-        \"The water, like our souls, is spent.\"
-                                - Brother Gilak
-        """,
-        """
-        "We have little room for error. Even the slightest 
-        mistake could lead to thermonuclear winter."
-                                                 - Cogworth
-        """,
-        """
-        "They who run on two legs shall outrun they who run on one.
-        They who run on four legs shall outrun those on two.
-        They who have nitro boosted treads outrun all."
-                                                  - Tanker Timm
-        """,
-        """
-        "Foolishly, I have pursued vengeance when I should have sought
-        death."
-                                                             - Nergull    
-        """,
-        """
-        "Blue skies have turned black, the rivers red. The earth is 
-        dust and the air is poison. Hope hangs ever so loosely."
-                                                      - Vizier Rabin
 """
+"The water, like our souls, is spent."
+                       - Brother Gilak
+""",
+"""
+"We have little room for error. Even the slightest 
+mistake could lead to thermonuclear winter."
+                                        - Cogworth
+""",
+"""
+"They who run on two legs shall outrun they who run on one.
+They who run on four legs shall outrun those on two.
+They who have nitro boosted treads outrun all."
+                                              - Tanker Timm
+""",
+"""
+"Foolishly, I have pursued personal vengeance when I should 
+have sought total annihilation."
+                                                  - Ner-gul
+""",
+"""
+"Blue skies have turned black, the rivers red. The earth is 
+dust and the air is poison. Hope hangs ever so loosely."
+                                             - Vizier Rabin
+""",
+"""
+"Woe unto the nonbeliever, for in all of their half lives
+they are doomed."
+                                       - Ordinance Priest        
+""",
+"""
+"Collapsing a quest wavefunction is not something to be
+observed lightly, if at all."
+                                        - Quantumfather        
+""",
+"""
+"Our records indicate you wanted certain, ahem, enhancements
+to your next vessel?"
+                              - Cloning Guild Representative
+""",
+"""
+"It's pretty dark in here. You are likely to be eaten by a grue!"
+                                                - SmartTorch v2.3
+""",
+"""
+"In the depths, truth echoes louder than any bloodcurdling 
+scream."
+                                                - Polontus
+""",
+"""
+"Me kill you now?"
+     - Trog Raider
+""",
+"""
+"Listen to the salty wind at night upon the dunes. The cacti
+sing their mournfull tune."
+                                      - Osiri of the Benduin
+""",
     ]
-
 
     screen = """    
 
@@ -86,14 +118,13 @@ def connection_screen():
                     | ;  :|     
           _____.,-#%&$@%#&#~,._____
         ###############################
-        #   RETRO MUTANT APOCALYPSE   #
+        #   |wRETRO MUTANT APOCALYPSE|n   #
         ###############################
 
 {}
-
-        Connect to an existing: 
-          |wconnect <username> <password>|n
-        Create a new account:
-          |wcreate <username> <password>|n
+Connect to an existing account: 
+  |wconnect <username> <password>|n
+Create a new account:
+  |wcreate <username> <password>|n
 """.format(random.choice(quotes))
     return screen

@@ -6,7 +6,7 @@ Commands describe the input the account can do to the game.
 """
 
 from evennia.commands.command import Command as BaseCommand
-
+from evennia import CmdSet
 # from evennia import default_cmds
 
 
@@ -31,6 +31,41 @@ class Command(BaseCommand):
     #         every command, like prompts.
     #
     pass
+
+class CmdStats(Command):
+    """
+    See your character's attributes and skills.
+
+    Usage:
+      stats
+    """
+    
+    key = "stats"
+
+    def func(self):
+        self.caller.msg("===Stats===")
+        self.caller.msg(f"Body: {self.caller.db.body}\nMind: {self.caller.db.mind}\nSoul: {self.caller.db.soul}")
+        self.caller.msg("===========")
+        self.caller.msg(f"Health: {self.caller.db.health}\nStamina: {self.caller.db.stamina}\nWillpower: {self.caller.db.willpower}")
+        self.caller.msg("===Skills===")
+
+class CmdPrompt(Command):
+    """
+    Shows your current health, stamina, and willpower.
+
+    Usage:
+      prompt
+    """
+
+    key = "prompt"
+
+    def func(self):
+        prompter = self.caller
+        
+
+class RetroCmdSet(CmdSet):
+    def at_cmdset_creation(self):
+        self.add(CmdStats)
 
 
 # -------------------------------------------------------------
@@ -185,3 +220,4 @@ class Command(BaseCommand):
 #                 self.character = self.caller.get_puppet(self.session)
 #             else:
 #                 self.character = None
+
