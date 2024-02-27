@@ -60,12 +60,29 @@ class CmdPrompt(Command):
     key = "prompt"
 
     def func(self):
-        prompter = self.caller
-        
+      self.caller.msg(f"{self.caller.db.health}hp, {self.caller.db.stamina}st, {self.caller.db.willpower}wp")        
+
+
+class CmdTell(Command):
+    """
+    Speak directly to another character.
+
+    Usage:
+      tell <character> <speech>
+    """
+
+class CmdTalk(Command):
+    """
+    Speak to characters in your party or at your current table.
+
+    Usage:
+      talk <speech>
+    """
 
 class RetroCmdSet(CmdSet):
     def at_cmdset_creation(self):
         self.add(CmdStats)
+        self.add(CmdPrompt)
 
 
 # -------------------------------------------------------------
